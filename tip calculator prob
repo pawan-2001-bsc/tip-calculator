@@ -1,0 +1,61 @@
+#tip calculator 
+pseudocode 
+
+START  
+
+  // Input: Prompt user for bill amount  
+  DISPLAY "Enter the total bill amount: "  
+  READ bill_amount  
+
+  // Validate bill amount (must be positive)  
+  IF bill_amount <= 0 THEN  
+    DISPLAY "Error: Bill amount must be a positive number."  
+    EXIT  
+  END IF  
+
+  // Input: Prompt user for service quality  
+  DISPLAY "Enter service quality (poor, fair, good, excellent): "  
+  READ service_quality  
+
+  // Determine tip percentage based on service quality  
+  IF service_quality = "poor" THEN  
+    tip_percentage = 10  
+  ELSE IF service_quality = "fair" THEN  
+    tip_percentage = 15  
+  ELSE IF service_quality = "good" THEN  
+    tip_percentage = 18  
+  ELSE IF service_quality = "excellent" THEN  
+    tip_percentage = 20  
+  ELSE  
+    DISPLAY "Error: Invalid service quality. Choose from (poor, fair, good, excellent)."  
+    EXIT  
+  END IF  
+
+  // Input: Prompt user for number of people splitting the bill  
+  DISPLAY "Enter the number of people splitting the bill: "  
+  READ num_people  
+
+  // Validate number of people (must be a positive integer)  
+  IF num_people <= 0 THEN  
+    DISPLAY "Error: Number of people must be a positive integer."  
+    EXIT  
+  END IF  
+
+  // Processing: Calculate tip amount  
+  tip_amount = (bill_amount * tip_percentage) / 100  
+
+  // Calculate total amount (bill + tip)  
+  total_amount = bill_amount + tip_amount  
+
+  // Calculate amount per person  
+  amount_per_person = total_amount / num_people  
+
+  // Output: Display the results  
+  DISPLAY "Bill amount: $" + bill_amount  
+  DISPLAY "Service quality: " + service_quality + " (" + tip_percentage + "%)"  
+  DISPLAY "Tip amount: $" + tip_amount  
+  DISPLAY "Total amount: $" + total_amount  
+  DISPLAY "Number of people: " + num_people  
+  DISPLAY "Amount per person: $" + amount_per_person  
+
+END
